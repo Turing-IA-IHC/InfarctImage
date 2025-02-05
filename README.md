@@ -14,11 +14,15 @@
 ### Prerequisites
 To use this model, install the required dependencies:
 ```bash
-pip install diffusers peft torch
+pip install diffusers torch torchvision kaggle
 ```
 
 ### Installation
-Clone this repository and navigate to its directory:
+Like a library from repository
+```bash
+pip install git+https://github.com/Turing-IA-IHC/InfarctImage.git
+```
+Or clone this repository and navigate to its directory:
 ```bash
 git clone https://github.com/Turing-IA-IHC/InfarctImage.git
 cd InfarctImage
@@ -27,23 +31,18 @@ cd InfarctImage
 ## 🎯 Usage
 Load and use the model with the following Python script:
 ```python
-from diffusers import StableDiffusionPipeline
-from peft import PeftModel
-import torch
-
-# Load the base model
-base_model = StableDiffusionPipeline.from_pretrained("stabilityai/stable-diffusion-2-1")
-
-# Load LoRA weights
-lora_model = PeftModel.from_pretrained(base_model, "Gavit0/InfarctImage")
-
-lora_model.to(torch.device("cuda"))  # Move to GPU if available
-
-# Generate an image
-prompt = "A middle-aged man clutching his chest in pain, showing signs of a heart attack."
-image = lora_model(prompt=prompt).images[0]
+# Import the custom library
+from infarctimage import InfarctImageCreator
+# Initialize the infarct model
+infarct_model = InfarctImageCreator()
+# Generate images
+prompt = ("Elderly man at a sports stadium surrounded by a crowd, "
+          "clutching his chest with a distressed look, indicating a heart attack."
+         )
+image = infarct_model.generate_image(prompt)
 image.show()
 ```
+More examples in notebooks/nfarctImageDemo.ipynb
 
 ## 📊 Model Training
 This model was trained on a dataset of 100 manually labeled images:
