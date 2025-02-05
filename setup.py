@@ -5,7 +5,7 @@ import sys
 import pkg_resources
 from setuptools import find_packages, setup
 
-def read_version(fname="version.py"):
+def read_version(fname="infarctimage.py"):
     with open(fname, encoding="utf-8") as f:
         content = f.readlines()
         for line in content:
