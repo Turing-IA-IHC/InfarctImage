@@ -42,7 +42,10 @@ prompt = ("Elderly man at a sports stadium surrounded by a crowd, "
 image = infarct_model.generate_image(prompt)
 image.show()
 ```
-More examples in notebooks/nfarctImageDemo.ipynb
+
+Full examples in: 
+- 🔗 **[Notebook in GitHub](notebooks/infarctImageDemo.ipynb)**
+- [![Open in Google Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Turing-IA-IHC/InfarctImage/blob/main/notebooks/infarctImageDemo.ipynb)
 
 ## 📊 Model Training
 This model was trained on a dataset of 100 manually labeled images:
