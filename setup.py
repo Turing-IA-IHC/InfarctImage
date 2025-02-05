@@ -5,9 +5,13 @@ import sys
 import pkg_resources
 from setuptools import find_packages, setup
 
-def read_version(fname="infarctimage.py"):
-    exec(compile(open(fname, encoding="utf-8").read(), fname, "exec"))
-    return locals()["__version__"]
+def read_version(fname="version.py"):
+    with open(fname, encoding="utf-8") as f:
+        content = f.readlines()
+        for line in content:
+            if "__version__" in line:
+                return line.split("=")[1].strip().strip("\"")
+    return "0.0.1"
 
 requirements = []
 setup(
