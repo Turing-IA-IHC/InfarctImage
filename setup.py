@@ -23,6 +23,7 @@ setup(
     url="https://github.com/Turing-IA-IHC/InfarctImage",
     license="MIT",
     packages=find_packages(exclude=["notebooks*"]),
+    include_package_data=True,
     install_requires=requirements
     + [
         str(r)
