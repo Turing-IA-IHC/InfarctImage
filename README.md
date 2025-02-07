@@ -82,6 +82,6 @@ We welcome contributions! To contribute:
 This project is licensed under the **MIT License**.
 
 ## 📧 Contact
-For questions or collaborations, contact **lgabrielrojas@ucundinamarca.edu.co** or open an issue in this repository.
+For questions or collaborations, open an issue in this repository.
 
 ---
