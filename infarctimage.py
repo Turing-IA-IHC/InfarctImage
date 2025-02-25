@@ -215,5 +215,9 @@ class InfarctImageDataset(Dataset):
         
         print("Downloading dataset from Kaggle...")
         os.makedirs(save_path, exist_ok=True)
-        kaggle.api.dataset_download_files("gavit0/InfarctImage", path=save_path, unzip=True)
+        kaggle.api.authenticate()
+        kaggle.api.dataset_download_files("gavit0/infarct-image", path=save_path, unzip=True)
+
+
+
         print(f"Dataset downloaded and extracted to {save_path}")
